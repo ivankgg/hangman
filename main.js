@@ -7,7 +7,7 @@ $(document).ready(function() {
             $(xml).find('word').each(function() {
                 randomwords.push($(this).text().replace(/\s/g, ''));
             });
-            console.log(randomwords);
+            displayWord(getRandomWord(randomwords));
         },
         error: function(error) {
             alert(error.mesage);
@@ -18,4 +18,7 @@ $(document).ready(function() {
 
 function getRandomWord(words) {
     return words[Math.floor(Math.random() * words.length)];
+}
+function displayWord(word){
+	$("#word").text(word);
 }
